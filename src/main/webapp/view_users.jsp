@@ -1,0 +1,81 @@
+<%@ page import="java.util.List" %>
+<%@ page import="model.User" %>
+
+<html>
+<head>
+    <title>All Users</title>
+
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="bg-light">
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-dark bg-dark px-4">
+    <span class="navbar-brand">Admin - Users</span>
+    <a href="admin.jsp" class="btn btn-light btn-sm">Back</a>
+</nav>
+
+<div class="container mt-5">
+
+
+<div class="card shadow p-4">
+
+    <h3 class="text-center mb-4">All Users </h3>
+
+    <table class="table table-bordered table-striped text-center">
+
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <%
+        List<User> list = (List<User>) request.getAttribute("users");
+
+        if (list != null && !list.isEmpty()) {
+            for (User u : list) {
+        %>
+
+            <tr>
+                <td><%= u.getId() %></td>
+                <td><%= u.getName() %></td>
+                <td><%= u.getEmail() %></td>
+                <td><%= u.getRole() %></td>
+            </tr>
+
+        <%
+            }
+        } else {
+        %>
+
+            <tr>
+                <td colspan="5">No users found</td>
+            </tr>
+
+        <%
+        }
+        %>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</div>
+
+</body>
+</html>
