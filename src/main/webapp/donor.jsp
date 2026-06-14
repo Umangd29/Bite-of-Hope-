@@ -19,8 +19,6 @@ List<Donation> list = DonationDAO.getDonationsByDonor(user.getId());
 <head>
     <title>Donor Dashboard</title>
 
-
-<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -28,7 +26,6 @@ List<Donation> list = DonationDAO.getDonationsByDonor(user.getId());
 
 <body class="bg-light">
 
-<!-- Navbar -->
 
 <nav class="navbar navbar-dark bg-dark px-4">
 
@@ -36,12 +33,10 @@ List<Donation> list = DonationDAO.getDonationsByDonor(user.getId());
 
     <div class="d-flex align-items-center">
 
-        <!-- USER NAME -->
         <span class="text-white me-3">
             Welcome, <%= user.getName() %>
         </span>
 
-        <!-- BUTTONS -->
         <a href="add_donation.jsp" class="btn btn-success btn-sm me-2">
             Add Donation
         </a>
@@ -60,7 +55,7 @@ List<Donation> list = DonationDAO.getDonationsByDonor(user.getId());
 
 <div class="container mt-5">
 
-<!-- Success Message -->
+
 <%
 String msg = request.getParameter("msg");
 if ("added".equals(msg)) {
@@ -72,7 +67,6 @@ if ("added".equals(msg)) {
 }
 %>
 
-<!-- Donation Cards -->
 <div class="row">
 
 <%
@@ -90,7 +84,6 @@ if (list != null && !list.isEmpty()) {
             <p><strong>Expiry:</strong> <%= d.getExpiry() %></p>
             <p><strong>Address:</strong> <%= d.getAddress() %></p>
 
-            <!-- STATUS -->
             <p>
                 <strong>Status:</strong>
                 <%
@@ -106,10 +99,8 @@ if (list != null && !list.isEmpty()) {
                 %>
             </p>
 
-            <!-- ACTION BUTTONS -->
             <div class="d-flex justify-content-between">
 
-                <!-- EDIT -->
                 <%
 if (!"claimed".equalsIgnoreCase(d.getStatus())) {
 %>
@@ -121,7 +112,6 @@ if (!"claimed".equalsIgnoreCase(d.getStatus())) {
 }
 %>
 
-                <!-- DELETE -->
                 <%
                 if (!"claimed".equalsIgnoreCase(d.getStatus())) {
                 %>

@@ -16,7 +16,7 @@ public class ManageNGOServlet extends HttpServlet {
 protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
-    // 🔐 Restrict to admin
+    // Restrict to admin
     HttpSession session = request.getSession();
     User user = (User) session.getAttribute("user");
 
@@ -25,10 +25,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
         return;
     }
 
-    // 📥 Get all NGOs
+    // Get all NGOs
     List<User> list = UserDAO.getAllNGOs();
 
-    // 📤 Send to JSP
+    // Send to JSP
     request.setAttribute("ngos", list);
     request.getRequestDispatcher("manage_ngos.jsp").forward(request, response);
 }

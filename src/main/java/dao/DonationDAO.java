@@ -11,7 +11,7 @@ import util.DBConnection;
 
 public class DonationDAO {
 
-    // ================= ADD DONATION =================
+    //ADD DONATION
     public static boolean addDonation(Donation d) {
 
         boolean status = false;
@@ -44,7 +44,7 @@ public class DonationDAO {
         return status;
     }
 
-    // ================= GET ALL AVAILABLE DONATIONS =================
+    //GET ALL AVAILABLE DONATIONS
     public static List<Donation> getAllDonations() {
 
         List<Donation> list = new ArrayList<>();
@@ -78,7 +78,7 @@ public class DonationDAO {
         return list;
     }
 
-    // ================= GET DONATIONS BY DONOR =================
+    //GET DONATIONS BY DONOR
     public static List<Donation> getDonationsByDonor(int donorId) {
 
         List<Donation> list = new ArrayList<>();
@@ -112,7 +112,7 @@ public class DonationDAO {
         return list;
     }
 
-    // ================= CLAIM DONATION =================
+    //CLAIM DONATION
     public static boolean claimDonation(int donationId, int ngoId) {
 
         boolean status = false;

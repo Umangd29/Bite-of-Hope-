@@ -8,8 +8,6 @@ User user = (User) session.getAttribute("user");
 <head>
     <title>Bite of Hope</title>
 
-
-<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -17,7 +15,6 @@ User user = (User) session.getAttribute("user");
 
 <body class="bg-light">
 
-<!-- Navbar -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
     <div class="container-fluid">
@@ -72,7 +69,6 @@ User user = (User) session.getAttribute("user");
     Connecting food donors with NGOs to reduce waste and help those in need.
 </p>
 
-<!-- Buttons -->
 <div class="mt-4">
 
     <%
@@ -100,7 +96,6 @@ User user = (User) session.getAttribute("user");
 
 </div>
 
-<!-- Feature Card -->
 <div class="card shadow mt-5 p-4 mx-auto" style="max-width:600px;">
     <h5 class="mb-3"> Our Mission</h5>
     <p class="text-muted mb-0">

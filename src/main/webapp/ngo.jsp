@@ -20,7 +20,6 @@ List<Donation> list = DonationDAO.getAllDonations();
     <title>NGO Dashboard</title>
 
 
-<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -28,23 +27,21 @@ List<Donation> list = DonationDAO.getAllDonations();
 
 <body class="bg-light">
 
-<!-- Navbar -->
 
 <nav class="navbar navbar-dark bg-dark px-4">
 
 
-<!-- LEFT: Brand -->
 <span class="navbar-brand fw-bold">Bite of Hope - NGO</span>
 
-<!-- RIGHT: User + Logout -->
+
 <div class="d-flex align-items-center ms-auto">
 
-    <!-- USER NAME -->
+
     <span class="text-white me-3 fw-semibold">
         <%= user.getName() %>
     </span>
 
-    <!-- LOGOUT -->
+
     <a href="logout" class="btn btn-danger btn-sm">
         Logout
     </a>
@@ -58,7 +55,6 @@ List<Donation> list = DonationDAO.getAllDonations();
 <div class="container mt-5">
 
 
-<!-- Donation Cards -->
 <div class="row">
 
 <%
@@ -76,7 +72,6 @@ if (list != null && !list.isEmpty()) {
             <p><strong>Expiry:</strong> <%= d.getExpiry() %></p>
             <p><strong>Address:</strong> <%= d.getAddress() %></p>
 
-            <!-- STATUS -->
             <p>
                 <strong>Status:</strong>
                 <%
@@ -92,7 +87,6 @@ if (list != null && !list.isEmpty()) {
                 %>
             </p>
 
-            <!-- CLAIM BUTTON -->
             <%
             if (!"claimed".equalsIgnoreCase(d.getStatus())) {
             %>

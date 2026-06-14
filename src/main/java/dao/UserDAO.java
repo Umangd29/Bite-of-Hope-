@@ -11,7 +11,7 @@ import util.DBConnection;
 
 public class UserDAO {
 
-    // ================= REGISTER USER =================
+    // REGISTER USER 
     public static boolean registerUser(User user) {
 
         boolean status = false;
@@ -40,7 +40,7 @@ public class UserDAO {
         return status;
     }
 
-    // ================= LOGIN USER =================
+    // LOGIN USER 
     public static User loginUser(String email, String password) {
 
         User user = null;
@@ -74,7 +74,7 @@ public class UserDAO {
         return user;
     }
 
-    // ================= GET ALL USERS =================
+    // GET ALL USERS
     public static List<User> getAllUsers() {
 
         List<User> list = new ArrayList<>();
@@ -107,7 +107,7 @@ public class UserDAO {
         return list;
     }
 
-    // ================= GET ALL NGOs =================
+    //GET ALL NGOs
     public static List<User> getAllNGOs() {
 
         List<User> list = new ArrayList<>();
@@ -139,7 +139,7 @@ public class UserDAO {
         return list;
     }
 
-    // ================= UPDATE STATUS =================
+    //UPDATE STATUS
     public static void updateStatus(int id, String status) {
 
         try {

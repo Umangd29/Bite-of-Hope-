@@ -16,7 +16,7 @@ public class ViewUsersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 🔐 Optional: restrict to admin only
+        // restrict to admin only
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
@@ -25,10 +25,10 @@ public class ViewUsersServlet extends HttpServlet {
             return;
         }
 
-        // 📥 Fetch users from DB
+        // Fetch users from DB
         List<User> list = UserDAO.getAllUsers();
 
-        // 📤 Send to JSP
+        // Send to JSP
         request.setAttribute("users", list);
         request.getRequestDispatcher("view_users.jsp").forward(request, response);
     }
